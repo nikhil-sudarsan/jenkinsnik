@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: solar-system
+  name: solar-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solar-system
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: solar-system
+    spec:
+      containers:
+      - image: mdhack/solar-system:2-4f15af2299f6652823205a853ffccccb9f77a4b8
+        name: solar-system
+        ports: 
+        - containerPort: 80
